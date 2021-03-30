@@ -37,11 +37,7 @@ vnoremap P "+P
 let mapleader = " "
 set timeoutlen=1000
 imap jk <Esc>
-vmap jk <Esc>
-imap kj <Esc>
-vmap kj <Esc>
 imap jj <Esc>
-vmap jj <Esc>
 
 " key bindings for quickly moving between windows
 " h left, l right, k up, j down
@@ -63,8 +59,8 @@ nmap <leader>wd :action OpenEditorInOppositeTabGroup<cr>
 " nmap <leader>ww :action JumpToLastWindow<cr>
 
 " Navigation
-nmap <leader>h :action Back<cr>
-nmap <leader>l :action Forward<cr>
+nmap <leader>n :action Back<cr>
+nmap <leader>m :action Forward<cr>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>g :action GotoDeclaration<cr>
 nmap <leader>u :action FindUsages<cr>
@@ -73,7 +69,7 @@ nmap <leader>M :action ActivateStructureToolWindow<cr>
 nmap <leader>d :action ShowErrorDescription<cr>
 nmap <leader>i :action GotoImplementation<cr>
 nmap <leader>I :action SelectIn<cr>
-nmap <leader><leader>e :action RecentFiles<cr>
+nmap <leader>e :action RecentFiles<cr>
 nmap <leader>p :action JumpToLastWindow<cr>
 
 " Errors
@@ -165,3 +161,8 @@ inoremap <S-Left> <C-O>:action EditorLeftWithSelection<CR>
 inoremap <S-Right> <C-O>:action EditorRightWithSelection<CR>
 inoremap <S-Up> <C-O>:action EditorUpWithSelection<CR>
 inoremap <S-Down> <C-O>:action EditorDownWithSelection<CR>
+
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+map g; <Action>(JumpToLastChange)
+map g, <Action>(JumpToNextChange)
